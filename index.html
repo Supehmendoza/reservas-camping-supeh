@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reserva Camping Solar Petroleros - SUPeH Mendoza</title>
+<style>
+:root{--navy:#0d315b;--navy2:#123f70;--gold:#c49a45;--light:#eef5fb;--line:#cbd9e6;--text:#18324d}
+*{box-sizing:border-box}
+body{margin:0;background:#edf1f5;font-family:Arial,Helvetica,sans-serif;color:var(--text)}
+.wrap{max-width:1050px;margin:24px auto;padding:0 14px}
+.card{background:#fff;border-radius:14px;box-shadow:0 5px 22px #0001;overflow:hidden}
+.hero{display:grid;grid-template-columns:150px 1fr 300px;min-height:190px;align-items:center;border-bottom:5px solid var(--gold)}
+.hero-logo{display:flex;justify-content:center;padding:18px}
+.hero-logo img{width:105px;height:auto;object-fit:contain}
+.hero-title{padding:15px 8px}
+.hero-title h1{margin:0;color:var(--navy);font-size:38px;letter-spacing:.5px}
+.hero-title h2{margin:4px 0;color:var(--navy);font-size:24px}
+.hero-title p{margin:8px 0;font-size:16px}
+.hero-photo img{width:100%;height:190px;object-fit:cover;display:block}
+.section{margin:16px}
+.section-title{background:var(--navy);color:white;font-weight:700;padding:12px 16px;border-radius:9px 9px 0 0;font-size:19px}
+.section-title.gold{background:var(--gold)}
+.grid{display:grid;gap:10px;padding:14px;background:#f8fbfe;border:1px solid var(--line);border-top:0;border-radius:0 0 9px 9px}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+label{font-size:13px;font-weight:700;color:#284b6c}
+input,select,textarea{width:100%;margin-top:5px;border:1px solid #b9cad9;border-radius:7px;padding:10px 11px;font-size:15px;background:#fff}
+textarea{min-height:78px;resize:vertical}
+.option-grid{display:grid;grid-template-columns:repeat(6,1fr);background:#f8fbfe;border:1px solid var(--line);border-top:0;border-radius:0 0 9px 9px}
+.option{padding:15px 8px;text-align:center;border-right:1px solid var(--line)}
+.option:last-child{border-right:0}
+.option label{display:block;font-size:14px;color:var(--text);cursor:pointer}
+.option input{width:auto;margin-right:6px}
+.rate-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#f8fbfe;border:1px solid var(--line);border-top:0;border-radius:0 0 9px 9px}
+.rate{padding:14px;text-align:center;border-right:1px solid var(--line)}
+.rate:last-child{border-right:0}.rate label{font-size:16px;cursor:pointer}.rate input{width:auto}
+.service-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}
+.service-table th,.service-table td{border:1px solid var(--line);padding:10px;font-size:14px}
+.service-table th{background:#e7f0f8;color:var(--navy)}
+.service-table input{margin:0}
+.total{display:flex;justify-content:space-between;align-items:center;background:var(--gold);color:white;font-size:22px;font-weight:700;padding:14px 18px;border-radius:0 0 9px 9px}
+.total input{max-width:250px;font-size:20px;text-align:right;margin:0}
+.conditions{background:#eef5fb;border:1px solid var(--line);padding:14px;border-radius:9px;line-height:1.5}
+.footer-sign{display:flex;justify-content:flex-end;align-items:center;gap:20px;padding:0 16px 18px}
+.footer-sign img{max-width:210px;max-height:85px;object-fit:contain}
+.actions{padding:0 16px 22px;display:flex;gap:10px;justify-content:flex-end}
+button{border:0;border-radius:8px;padding:13px 20px;font-size:16px;font-weight:700;cursor:pointer}
+.primary{background:var(--navy);color:#fff}.secondary{background:#e7edf3;color:var(--navy)}
+.note{font-size:12px;color:#5c6d7c;margin-top:6px}
+@media(max-width:800px){
+ .hero{grid-template-columns:90px 1fr;}.hero-photo{grid-column:1/-1}.hero-photo img{height:150px}
+ .hero-logo img{width:70px}.hero-title h1{font-size:27px}.hero-title h2{font-size:18px}
+ .g3,.g2{grid-template-columns:1fr}.option-grid{grid-template-columns:repeat(2,1fr)}.option:nth-child(2n){border-right:0}
+ .rate-grid{grid-template-columns:1fr}.rate{border-right:0;border-bottom:1px solid var(--line)}
+ .service-table{font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+  <header class="hero">
+    <div class="hero-logo"><img src="assets/supeh-logo.png" alt="SUPeH Filial Mendoza"></div>
+    <div class="hero-title">
+      <h1>RESERVA</h1>
+      <h2>CAMPING SOLAR PETROLEROS</h2>
+      <h2>SUPeH VISTALBA</h2>
+      <p>📍 Roque Sáenz Peña 8350, Vistalba - Mendoza</p>
+    </div>
+    <div class="hero-photo"><img src="assets/quincho.webp" alt="Quincho del camping"></div>
+  </header>
+
+  <form id="reservaForm">
+    <section class="section">
+      <div class="section-title">DATOS DE LA RESERVA</div>
+      <div class="grid g3">
+        <label>Fecha de reserva<input type="date" name="fecha" required></label>
+        <label>Horario desde<input type="time" name="horaDesde" required></label>
+        <label>Horario hasta<input type="time" name="horaHasta" required></label>
+        <label>Cantidad de personas<input type="number" name="personas" min="0" required></label>
+        <label>N° de reserva<input type="text" name="numeroReserva" placeholder="Se asignará automáticamente"></label>
+        <label>Fecha de emisión<input type="date" name="fechaEmision"></label>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title gold">RESPONSABLE DE LA RESERVA</div>
+      <div class="grid g2">
+        <label>Nombre y apellido<input type="text" name="responsable" required></label>
+        <label>Empresa<input type="text" name="empresa"></label>
+        <label>Correo electrónico del afiliado<input type="email" name="emailAfiliado" placeholder="correo@ejemplo.com"></label>
+        <label>Teléfono<input type="tel" name="telefono"></label>
+        <label style="grid-column:1/-1;display:flex;align-items:center;gap:9px;background:#eef5fb;border:1px solid #cbd9e6;border-radius:7px;padding:12px;cursor:pointer">
+          <input type="checkbox" name="enviarCopiaAfiliado" value="Sí" style="width:auto;margin:0">
+          <span>Enviar una copia de la reserva al correo del afiliado</span>
+        </label>
+        <label style="grid-column:1/-1">Observaciones<textarea name="observaciones"></textarea></label>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">SECTOR AUTORIZADO</div>
+      <div class="option-grid">
+        <div class="option"><label><input type="checkbox" name="sector" value="Quincho 1">Quincho 1</label></div>
+        <div class="option"><label><input type="checkbox" name="sector" value="Quincho 2">Quincho 2</label></div>
+        <div class="option"><label><input type="checkbox" name="sector" value="Galería">Galería</label></div>
+        <div class="option"><label><input type="checkbox" name="sector" value="Salón">Salón</label></div>
+        <div class="option"><label><input type="checkbox" name="sector" value="Canchas">Canchas</label></div>
+        <div class="option"><label><input type="checkbox" name="sector" value="Churrasqueras">Churrasqueras</label></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title gold">TIPO DE TARIFA</div>
+      <div class="rate-grid">
+        <div class="rate"><label><input type="radio" name="tarifa" value="Afiliado" required> Afiliado</label></div>
+        <div class="rate"><label><input type="radio" name="tarifa" value="Socio"> Socio</label></div>
+        <div class="rate"><label><input type="radio" name="tarifa" value="Particular"> Particular</label></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">INGRESO / SERVICIOS</div>
+      <div style="overflow:auto">
+      <table class="service-table">
+        <thead><tr><th>Concepto</th><th>Detalle / opción</th><th>Cantidad</th><th>Importe</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Ingreso al camping</td>
+            <td>
+              <label><input type="radio" name="ingresoCargo" value="Sin cargo"> Sin cargo</label><br>
+              <label><input type="radio" name="ingresoCargo" value="Con cargo"> Con cargo</label>
+            </td>
+            <td><input type="number" name="cantidadIngreso" min="0" placeholder="Cantidad"></td>
+            <td><input type="number" name="importeIngreso" min="0" step="0.01" placeholder="Precio unitario"></td>
+          </tr>
+          <tr>
+            <td>Invitados adicionales</td>
+            <td><input type="text" name="detalleInvitados" placeholder="Detalle opcional"></td>
+            <td><input type="number" name="cantidadAdicionales" min="0" placeholder="Cantidad"></td>
+            <td><input type="number" name="importeAdicionales" min="0" step="0.01" placeholder="Precio unitario"></td>
+          </tr>
+          <tr>
+            <td>Uso de pileta</td>
+            <td>
+              <label><input type="radio" name="pileta" value="Sí"> Sí</label>
+              <label><input type="radio" name="pileta" value="No"> No</label>
+            </td>
+            <td><input type="number" name="cantidadPileta" min="0" placeholder="Cantidad"></td>
+            <td><input type="number" name="importePileta" min="0" step="0.01" placeholder="Precio unitario"></td>
+          </tr>
+        </tbody>
+      </table></div>
+      <div class="total">
+        <span>IMPORTE TOTAL</span>
+        <input type="text" name="importeTotal" readonly placeholder="$ 0,00">
+      </div>
+      <div class="note">El total se calcula automáticamente como cantidad × precio unitario en cada concepto. Los precios se cargan manualmente para permitir actualizar las tarifas.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">CONDICIONES DE LA RESERVA</div>
+      <div class="conditions">
+        <label><input type="checkbox" name="aceptaCondiciones" required> Confirmo que la reserva fue confeccionada de acuerdo con las condiciones vigentes del camping.</label>
+        <p>• El sector autorizado debe ser respetado según lo acordado en la reserva.</p>
+        <p>• En caso de cambios o cancelaciones, comunicarse con la administración con la anticipación correspondiente.</p>
+        <p>• El plazo de uso del sector deberá respetarse según las condiciones informadas al afiliado.</p>
+      </div>
+    </section>
+
+    <div class="footer-sign">
+      <div><strong>Autorización</strong><br>Reserva confeccionada por administración</div>
+      <img src="assets/firma-gabriel.png" alt="Firma Gabriel Crescini">
+    </div>
+
+    <div class="actions">
+      <button type="reset" class="secondary">Limpiar</button>
+      <button type="submit" class="primary">GENERAR RESERVA</button>
+    </div>
+  </form>
+
+  <div style="width:100%">
+    <img src="assets/pileta.webp" alt="Pileta del camping" style="width:100%;height:210px;object-fit:cover;display:block">
+  </div>
+</div>
+</div>
+
+<script>
+document.querySelector('input[name="fechaEmision"]').value = new Date().toISOString().slice(0,10);
+
+function num(name){
+  const v = parseFloat(document.querySelector('[name="'+name+'"]').value);
+  return Number.isFinite(v) ? v : 0;
+}
+function calcularTotal(){
+  const ingreso = num('cantidadIngreso') * num('importeIngreso');
+  const adicionales = num('cantidadAdicionales') * num('importeAdicionales');
+  const pileta = num('cantidadPileta') * num('importePileta');
+  const total = ingreso + adicionales + pileta;
+  document.querySelector('[name="importeTotal"]').value =
+    total.toLocaleString('es-AR',{style:'currency',currency:'ARS',minimumFractionDigits:2});
+}
+document.querySelectorAll(
+  '[name="cantidadIngreso"],[name="importeIngreso"],[name="cantidadAdicionales"],[name="importeAdicionales"],[name="cantidadPileta"],[name="importePileta"]'
+).forEach(el => el.addEventListener('input', calcularTotal));
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxc3gjtsezhcsnpS5qNv-dvrsYgbo0JzRwjatVWRSTioXV0DwxVbbubosGtdVPPmnZJ/exec';
+
+document.getElementById('reservaForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = this;
+  const f = new FormData(form);
+  const sectors = [...document.querySelectorAll('input[name="sector"]:checked')].map(x=>x.value);
+  if(!sectors.length){ alert('Seleccioná al menos un sector autorizado.'); return; }
+
+  const payload = {};
+  for (const [key, value] of f.entries()) {
+    if (key === 'sector') continue;
+    if (key === 'enviarCopiaAfiliado' || key === 'aceptaCondiciones') {
+      payload[key] = true;
+    } else {
+      payload[key] = value;
+    }
+  }
+  payload.sectores = sectors;
+  payload.importeTotalNumero =
+    num('cantidadIngreso') * num('importeIngreso') +
+    num('cantidadAdicionales') * num('importeAdicionales') +
+    num('cantidadPileta') * num('importePileta');
+
+  const boton = form.querySelector('button[type="submit"]');
+  const textoOriginal = boton.textContent;
+  boton.disabled = true;
+  boton.textContent = 'ENVIANDO…';
+
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+    alert('Reserva enviada correctamente. El sistema generó la reserva y procesó el envío de los correos.');
+    form.reset();
+    document.querySelector('input[name="fechaEmision"]').value = new Date().toISOString().slice(0,10);
+    calcularTotal();
+  } catch (err) {
+    console.error(err);
+    alert('No se pudo enviar la reserva. Verificá la conexión y volvé a intentarlo.');
+  } finally {
+    boton.disabled = false;
+    boton.textContent = textoOriginal;
+  }
+});
+</script>
+</body>
+</html>
